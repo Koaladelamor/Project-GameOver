@@ -3716,7 +3716,7 @@ MonoBehaviour:
   m_RefResolutionX: 640
   m_RefResolutionY: 360
   m_UpscaleRT: 0
-  m_PixelSnapping: 0
+  m_PixelSnapping: 1
   m_CropFrameX: 1
   m_CropFrameY: 1
   m_StretchFill: 0
@@ -3935,7 +3935,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -19.32309, y: -43.675518}
+  m_Offset: {x: -13.768158, y: -47.43095}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3946,7 +3946,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 104.76778, y: 130.59094}
+  m_Size: {x: 103.66519, y: 97.660484}
   m_EdgeRadius: 0
 --- !u!50 &897868068
 Rigidbody2D:
@@ -4065,7 +4065,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAAAIIew8wxObYwIAAB4FAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFtVE1z2jAQ/SuMzqVjDA3QW2sI6YGECe3k4otirbEGWfLoI0Ay/PeuZBs7bk8sb7/e2135g3BpKsis0hvN2VYxIN9HxNvky6hzPsCZHpTc83doY144s4UPoiHmmVquEJ/4NKNKsJpnP+RB+OAIQSd5rnS5ZgdIlLEG4ZwKA+jSyvpsidDHiJzxZ7z0KRe04rm33tFaRqMrmhlIC7oLbQOjr1E0mSym0XTaJNTxTmaClhUwT75LW0Rt4l1UB0oU1sTEvo8SgpuGFbGXKqhOaGUcasIAximqDFS86AL4obDD5Kc8N2AbmppeVlzjsOqq5KeqJ1hSc6yZvVHhfJ9JvAic6qLbf/zjSXDnWpUPbd9JUGQLnh2f6SWjxvZG3IdXn4k7eaLiSF8FvBQgH9VGKycZOq12PtUZiFfd35u0pIDs2OE11QHoqv8sqlmP13AN6s+J4OVr2OGsBvZChXmHMwCNm/mFhMORmKYEop7FHwO/6aF/TY3jnmtj0dWolJ7eq3Lah5J1mJlX42yitIQAN6QrkFTYyw7L2OEKB75e24Hnnvp30zRvfO1zGKQEuIuPooFrp063ZZlCnbZgiidnBZfQkfaOR5xToqSsL6w/kzZt73ROs17awXH2+bQIPqAlW9wxOpt+i+l8Oc5hATFdxPk0m8/jWUzC7XGJOqnY1USb8eDWZFdc4p21n5PRRtMqXDvT9LTh76XqjZzLXO0zDSCf6go34qCxCb5KtmYcB7QHa7kM+yYfKREqOwJLb4XSoHR9tpqmXZWUVPxNWY+kJAnfj5R4+HbLOw1vHE6+eVvsSq5/AVBLAwQUAAAICAAACCHsLCqLLm0AAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNdRUEovSizIKAaKGII4pZkpIHa0koGxsWWKhVlKoomxqVGiuaVuWqpFqlGihVGacbK5uZGJkVIsUH1JZUGqX2JuKkRPQGJJRlpmXkpmXrqee1FmijvIaKXYWgBQSwECLQAUAAAICAAACCHsPMMTm2MCAAAeBQAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAACCHsLCqLLm0AAAB4AAAACQAkAAAAAAAAAAAAAACwAgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAGgDAAAAAA==
+    dataString: UEsDBBQAAAgIAAAIIewknZ5AZQIAAB4FAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFtVMmS2jAQ/RVK55CyDQyQWwIMkwMDNSQ1F1+E1cYqZMklyazFv6cl29ghObn9Xi+vF/tGuDQFJFbppeZspRiQbz3ibPKl15JvcKZ7Jbf8Co3PJ2c2c07U+3xQyxXioQszKgerefJd7oVzDhAsJU+VzhdsDzNlrEE4pcIAUlpZFy0RuvXIGR/9qQu5oBWNnXVFaxr07mgmIC3o1rVxDL4GQfASDqJoPKojqoBSJoLmBTCnvo2LRkETGqLpXSX2VnuNHJkoIbiplRF7KXznH/Ti+macYpdeygBfM+D7zLrE3cB1mhqwtUxNL3OucVhVRvJDVRPMqTlUwo5UlK5GGE28oCrp6h++H3o61Sp/a+qGvh+b8eSAChNqbGfEXXjeCg/9fE5UHOhOwGcG8l0ttSolQ9Lq0oWWBqJ5+/pobZZBcmjxSuoTWBb/WVS9HdfD3Xd/ngme7/wOhxWwFcrP2p8BaFzLTxTsj8TUKRB1Kn4b+EX33WuqiVeujUWq7lI6eTtVaudKFn5mrpvSzpSW4OFadAGSCnvZYBr7vMInrlP2iXml7rupi9dc8zk8hXi49Q+CJ2qjTo9lmUydVmCydWkFl9CKdsQ7zmmmpKwurDuTJmxb6pQmnbB9ydnfp0WCwWDKJi+MDgejiI6n/RQmENFJlA6S8TgaRsTfHpfYJxWbSmg9HtyabJNLvLPmd9Jbalr4a2eanpb8mqvOyLlM1TbRAHJdZXgIB41F8JNkC8ZxQFuwlku/b3KLiVDJAVj8SBT7Thdnq2ncZolJwY/KOiQmM///iImDH7e80XDkcHLFm2R3cv8DUEsDBBQAAAgIAAAIIewsKosubQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM011FQSi9KLMgoBooYgjilmSkgdrSSgbGxZYqFWUqiibGpUaK5pW5aqkWqUaKFUZpxsrm5kYmRUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAAAIIewknZ5AZQIAAB4FAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAAAIIewsKosubQAAAHgAAAAJACQAAAAAAAAAAAAAALICAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAagMAAAAA
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -4566,10 +4566,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
-  radius: 0.1
+  radius: 0.2
   height: 1
   canMove: 1
-  maxSpeed: 35
+  maxSpeed: 30
   gravity: {x: NaN, y: NaN, z: NaN}
   groundMask:
     serializedVersion: 2
@@ -4581,16 +4581,16 @@ MonoBehaviour:
   enableRotation: 0
   autoRepath:
     mode: 2
-    interval: 0.5
-    sensitivity: 8
-    maximumInterval: 2
+    interval: 5
+    sensitivity: 20
+    maximumInterval: 5
     visualizeSensitivity: 0
   targetCompatibility: {fileID: 0}
   maxAcceleration: -2.5
   rotationSpeed: 360
-  slowdownDistance: 6
-  pickNextWaypointDist: 2
-  endReachedDistance: 0.2
+  slowdownDistance: 20
+  pickNextWaypointDist: 8
+  endReachedDistance: 5
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
@@ -4728,7 +4728,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1784028915}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -18.5, y: 14.4, z: 0}
   m_LocalScale: {x: 20, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
