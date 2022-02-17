@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class GridManager : MonoBehaviour
 {
-    [SerializeField] int MAX_FILAS = 6;
-    [SerializeField] int MAX_COLUMNAS = 8;
+    [SerializeField] int MAX_FILAS = 5;
+    [SerializeField] int MAX_COLUMNAS = 10;
 
     [SerializeField] Transform posicionInicial;
     public GameObject[,] Celdas;
@@ -27,10 +27,36 @@ public class GridManager : MonoBehaviour
                 Celdas[i, j].transform.parent = this.transform;
                 Celdas[i, j].name = "Celda_" + i + "-" + j;
 
+                Celdas[i, j].transform.parent = null;
 
+                if (i == 0 && j % 2 != 0)
+                {
+                    //negro
+                    Celdas[i, j].GetComponent<SpriteRenderer>().color = new Vector4((float)0.5, (float)0.5, (float)0.5, 1);
+                }
+
+                if (i % 2 != 0 && j == 0)
+                {
+                    //negro
+                    Celdas[i, j].GetComponent<SpriteRenderer>().color = new Vector4((float)0.5, (float)0.5, (float)0.5, 1);
+                }
+
+                if (i % 2 != 0 && j % 2 == 0)
+                {
+                    //negro
+                    Celdas[i, j].GetComponent<SpriteRenderer>().color = new Vector4((float)0.5, (float)0.5, (float)0.5, 1);
+                }
+
+                if (i % 2 == 0 && j % 2 != 0)
+                {
+                    //negro
+                    Celdas[i, j].GetComponent<SpriteRenderer>().color = new Vector4((float)0.5, (float)0.5, (float)0.5, 1);
+                }
 
             }
         }
     }
+
+
 
 }
