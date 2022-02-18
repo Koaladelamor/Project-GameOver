@@ -25,7 +25,7 @@ public class GridManager : MonoBehaviour
                 Celdas[i, j] = Instantiate(Square);
                 Celdas[i, j].transform.position = new Vector3(posicionInicial.position.x + j, posicionInicial.position.y - i, posicionInicial.position.z);
                 Celdas[i, j].transform.parent = this.transform;
-                Celdas[i, j].name = "Celda_" + i + "-" + j;
+                Celdas[i, j].name = i + "-" + j;
 
                 Celdas[i, j].transform.parent = null;
 
