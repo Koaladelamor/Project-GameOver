@@ -49,11 +49,6 @@ public class Board : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        
-    }
-
     static public Board Instance
     {
         get { return m_instance; }
@@ -64,7 +59,7 @@ public class Board : MonoBehaviour
     {
         Tile currentTile = m_tiles[(int)p_tilePosition.y, (int)p_tilePosition.x].GetComponent<Tile>();
 
-        Debug.Log(p_tilePosition.x + " | " + p_tilePosition.y);
+        //Debug.Log(p_tilePosition.x + " | " + p_tilePosition.y);
 
         return currentTile.AddPawn(p_pawn);
         
@@ -101,6 +96,15 @@ public class Board : MonoBehaviour
 
             return new Vector2(tileX, tileY);
         }
+    }
+
+    public bool IsTileEmpty(Vector2 p_tilePosition)
+    {
+        if(p_tilePosition.x >= 0 && p_tilePosition.x < MAX_COLUMNAS && p_tilePosition.y >= 0 && p_tilePosition.y < MAX_FILAS)
+        {
+            return m_tiles[(int)p_tilePosition.y, (int)p_tilePosition.x].GetComponent<Tile>().IsEmpty;
+        }
+        return false;
     }
 
 }

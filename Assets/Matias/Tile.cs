@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
-    GameObject m_pawn = null;
     bool m_isEmpty;
 
     private void Start()
@@ -16,25 +15,22 @@ public class Tile : MonoBehaviour
     {
         if (p_pawn.CompareTag("Pawn") && m_isEmpty)
         {
-            p_pawn.GetComponent<Pawn>().SetPosition(transform.position);
-            m_pawn = p_pawn;
+            p_pawn.GetComponent<Pawn>().SetPosition(new Vector3(transform.position.x, transform.position.y, transform.position.z -1));
             m_isEmpty = false;
             return true;
         }
+        Debug.Log("ERROR");
         return false;
     }
 
     public void TakePawn()
     {
-        if(m_pawn != null)
-        {
-            m_pawn = null;
-            m_isEmpty = true;
-        }
+        m_isEmpty = true;
     }
 
     public bool IsEmpty
     {
         get { return m_isEmpty; }
     }
+
 }
