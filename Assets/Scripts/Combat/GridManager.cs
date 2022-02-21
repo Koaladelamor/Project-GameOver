@@ -87,6 +87,7 @@ public class GridManager : MonoBehaviour
 
         Vector2 rightBottomBoardPosition = leftTopBoardPosition + new Vector2(MAX_COLUMNAS * m_tileSize, -MAX_FILAS * m_tileSize);
 
+        //Out of grid
         if (p_mousePosition.x < leftTopBoardPosition.x || p_mousePosition.x > rightBottomBoardPosition.x || p_mousePosition.y > leftTopBoardPosition.y || p_mousePosition.y < rightBottomBoardPosition.y)
         {
             return Vector2.positiveInfinity;

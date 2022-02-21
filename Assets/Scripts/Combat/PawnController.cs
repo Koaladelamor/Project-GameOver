@@ -4,11 +4,11 @@ using UnityEngine;
 
 enum PAWN_STATUS { IDLE, SEARCH, ATTACK }
 
-
 public class PawnController : MonoBehaviour
 {
     public bool draggable;
     bool isDragged;
+
     private Vector3 mouseDragStartPos;
     private Vector3 objDragStartPos;
 
@@ -18,27 +18,42 @@ public class PawnController : MonoBehaviour
     Vector3 m_previousPosition;
 
     [SerializeField] Transform m_positionToGo;
-    [SerializeField] bool m_isMyTurn;
 
     PAWN_STATE m_state;
     Vector3[] m_directions = { Vector3.right, Vector3.down, Vector3.left, Vector3.up };
 
+    float timer = 0f;
+    private float waitTime = 0.3f;
 
+    int m_maxSteps;
+    int m_currentStep;
+
+    public int m_turnOrder;
+    public bool m_isMyTurn;
 
     private void Start()
     {
+        m_currentStep = 0;
+        m_maxSteps = 4;
+        m_state = PAWN_STATE.IDLE;
         m_position = transform.position;
         m_previousPosition = m_position;
     }
     private void Update()
     {
+        timer += Time.deltaTime;
 
         switch (m_state)
         {
             default:
                 break;
             case PAWN_STATE.SEARCH:
-                 Search();
+
+                if (timer >= waitTime) { 
+                    Search();
+                    timer = 0;
+                }
+
                 break;
             case PAWN_STATE.IDLE:
                 if (Input.GetKeyDown(KeyCode.Space) && m_isMyTurn)
@@ -131,10 +146,14 @@ public class PawnController : MonoBehaviour
         m_tilePosition = tileToMove;
         GridManager.Instance.AssignPawnToTile(this.gameObject, tileToMove);
 
-    }
+        m_currentStep++;
 
-    IEnumerator MovementInterval() {
-        yield return new WaitForSeconds(1f);
+        if (m_currentStep >= m_maxSteps)
+        {
+            m_state = PAWN_STATE.IDLE;
+            m_isMyTurn = false;
+            m_currentStep = 0;
+        }
     }
 
     public void SetPosition(Vector3 p_position)
