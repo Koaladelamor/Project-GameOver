@@ -4,49 +4,32 @@ using UnityEngine;
 
 public class CombatManager : MonoBehaviour
 {
-    private GameObject[] pawns;
+    static CombatManager m_instance = null;
 
-    private GameObject[] players;
-    private GameObject[] enemies;
+    public GameObject[] m_players;
+    public GameObject[] m_enemies;
 
     int turn;
-
     public bool startCombat;
     public bool turnDone;
 
     // Start is called before the first frame update
     void Start()
     {
+        //Singleton
+        if (m_instance == null) { m_instance = this; }
+        else { Destroy(this.gameObject); }
+
         turnDone = false;
         turn = 1;
 
-        pawns = GameObject.FindGameObjectsWithTag("Pawn");
+        /*players[0] = GameObject.Find("AI_Player");
+        players[1] = GameObject.Find("AI_Player2");
+        players[2] = GameObject.Find("AI_Player3");
 
-        foreach (GameObject pawn in pawns) {
-            if (pawn.GetComponent<PawnController>().m_turnOrder == 1) {
-                players[0] = pawn;
-            }
-            else if (pawn.GetComponent<PawnController>().m_turnOrder == 3)
-            {
-                players[1] = pawn;
-            }
-            else if (pawn.GetComponent<PawnController>().m_turnOrder == 5)
-            {
-                players[2] = pawn;
-            }
-            else if (pawn.GetComponent<PawnController>().m_turnOrder == 2)
-            {
-                enemies[0] = pawn;
-            }
-            else if (pawn.GetComponent<PawnController>().m_turnOrder == 4)
-            {
-                enemies[1] = pawn;
-            }
-            else if (pawn.GetComponent<PawnController>().m_turnOrder == 6)
-            {
-                enemies[2] = pawn;
-            }
-        }
+        enemies[0] = GameObject.Find("AI_Enemy");
+        enemies[1] = GameObject.Find("AI_Enemy2");
+        enemies[2] = GameObject.Find("AI_Enemy3");*/
 
     }
 
@@ -57,23 +40,71 @@ public class CombatManager : MonoBehaviour
         {
             if (turn == 1)
             {
-                players[0].GetComponent<PawnController>().m_isMyTurn = true;
                 if (turnDone)
                 {
                     turn++;
                     turnDone = !turnDone;
                 }
+                else m_players[0].GetComponent<PawnController>().m_isMyTurn = true;
+
             }
 
-            if (turn == 2)
+            else if (turn == 2)
             {
-                enemies[0].GetComponent<PawnController>().m_isMyTurn = true;
                 if (turnDone)
                 {
                     turn++;
                     turnDone = !turnDone;
                 }
+                else m_enemies[0].GetComponent<PawnController>().m_isMyTurn = true;
+
             }
+
+            else if (turn == 3)
+            {
+                if (turnDone)
+                {
+                    turn++;
+                    turnDone = !turnDone;
+                }
+                else m_players[1].GetComponent<PawnController>().m_isMyTurn = true;
+
+            }
+
+            else if (turn == 4)
+            {
+                if (turnDone)
+                {
+                    turn++;
+                    turnDone = !turnDone;
+                }
+                else m_enemies[1].GetComponent<PawnController>().m_isMyTurn = true;
+
+            }
+
+            else if (turn == 5)
+            {
+                if (turnDone)
+                {
+                    turn++;
+                    turnDone = !turnDone;
+                }
+                else m_players[2].GetComponent<PawnController>().m_isMyTurn = true;
+
+            }
+
+            else if (turn == 6)
+            {
+                if (turnDone)
+                {
+                    turn++;
+                    turnDone = !turnDone;
+                }
+                else m_enemies[2].GetComponent<PawnController>().m_isMyTurn = true;
+
+            }
+
+            else if (turn > 6) { turn = 1; }
         }
 
 
