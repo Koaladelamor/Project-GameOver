@@ -9,9 +9,11 @@ public class CombatManager : MonoBehaviour
     public GameObject[] m_players;
     public GameObject[] m_enemies;
 
+
     int turn;
     public bool startCombat;
     public bool turnDone;
+    int i = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +23,7 @@ public class CombatManager : MonoBehaviour
         else { Destroy(this.gameObject); }
 
         turnDone = false;
-        turn = 1;
+        turn = 0;
 
         /*players[0] = GameObject.Find("AI_Player");
         players[1] = GameObject.Find("AI_Player2");
@@ -38,6 +40,26 @@ public class CombatManager : MonoBehaviour
     {
         if (startCombat)
         {
+            /*if (turnDone)
+            {
+                i++;
+                turn++;
+                turnDone = !turnDone;
+                if (turn > 5) { turn = 0; }
+            }
+            else {
+                if (i % 2 == 0)
+                {
+                    m_players[i / 2].GetComponent<PawnController>().m_isMyTurn = true;
+                }
+                else
+                {
+                    m_enemies[i / 2].GetComponent<PawnController>().m_isMyTurn = true;
+                }
+
+            }*/
+
+            
             if (turn == 1)
             {
                 if (turnDone)
@@ -46,7 +68,6 @@ public class CombatManager : MonoBehaviour
                     turnDone = !turnDone;
                 }
                 else m_players[0].GetComponent<PawnController>().m_isMyTurn = true;
-
             }
 
             else if (turn == 2)
@@ -105,20 +126,8 @@ public class CombatManager : MonoBehaviour
             }
 
             else if (turn > 6) { turn = 1; }
+            
         }
-
-
-
-
-        /*switch (turn) {
-            default: break;
-            case 1:
-                players[0].GetComponent<PawnController>().m_isMyTurn = true;
-
-                break;
-            case 2:
-
-        }*/
 
 
     }
