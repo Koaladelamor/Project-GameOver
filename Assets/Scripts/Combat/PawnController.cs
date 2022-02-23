@@ -42,9 +42,18 @@ public class PawnController : MonoBehaviour
 
     private void Start()
     {
-        damage = 10;
-        max_hp = 15;
+        if (this.tag == "Player")
+        {
+            damage = 5;
+            max_hp = 15;
+        }
+        else if (this.tag == "Enemy")
+        {
+            damage = 1;
+            max_hp = 15;
+        }
         current_hp = max_hp;
+
         m_isMyTurn = false;
         m_currentStep = 0;
         m_maxSteps = 4;
@@ -72,7 +81,7 @@ public class PawnController : MonoBehaviour
                 break;
 
             case PAWN_STATE.IDLE:
-                if (/*Input.GetKeyDown(KeyCode.Space) &&*/ m_isMyTurn)
+                if (/*Input.GetKeyDown(KeyCode.Space) &&*/ m_isMyTurn && !EnemyClose())
                 {
                     m_state = PAWN_STATE.SEARCH;
                 }
@@ -85,6 +94,10 @@ public class PawnController : MonoBehaviour
 
                 //attack
                 m_pawnToAttack.current_hp -= damage;
+                if (m_pawnToAttack.current_hp <= 0)
+                {
+                    m_pawnToAttack.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                }
                 Debug.Log(m_pawnToAttack.current_hp);
 
                 if (!EnemyClose() && m_currentStep < m_maxSteps)
@@ -100,9 +113,7 @@ public class PawnController : MonoBehaviour
                 break;
         }
 
-        if (this.current_hp <= 0) {
-            GetComponent<SpriteRenderer>().enabled = false;
-        }
+
     }
     private void OnMouseDown()
     {
@@ -236,10 +247,9 @@ public class PawnController : MonoBehaviour
                     {
                         if (combatManager.GetComponent<CombatManager>().m_players[j].transform.position.x == positionToCheck.x && combatManager.GetComponent<CombatManager>().m_players[j].transform.position.y == positionToCheck.y)
                         {
-                            m_pawnToAttack = combatManager.GetComponent<CombatManager>().m_enemies[j].GetComponent<PawnController>();
+                            m_pawnToAttack = combatManager.GetComponent<CombatManager>().m_players[j].GetComponent<PawnController>();
                             //Debug.Log("Player Found");
                             return true;
-
                         }
                     }
                 }
