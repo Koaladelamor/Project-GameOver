@@ -48,6 +48,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Entities
-    uniqueID: 3008864899
+  - name: Essentials
+    uniqueID: 1470511969
     locked: 0
